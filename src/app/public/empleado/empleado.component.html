@@ -1,0 +1,110 @@
+<div class="row row-height">
+  <div class="col-md-12">
+    <div class="card-group">
+      <div class="card">
+        <div class="card-body">
+
+          <div class="row row-height">
+            <div class="col-md-12">
+              <div class="card-group">
+                <div class="card">
+                  <div class="card-body">
+                    <h3 class="card-subtitle mb-2" style="font-size: 20px; color: #F6A433; text-align: center;"><i
+                        class=""></i>Módulo de administración de Empleados de <br />KSP - TECHNOLOGY</h3>
+                    <hr style="margin:0;" />
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row row-height">
+            <div class="col-md-12">
+              <div class="card-group">
+                <div class="card">
+                  <div class="card-body" style="text-align: center;">
+                    <h5 class="card-subtitle mb-2" style="font-size: 15px; color: #F6A433; text-align: center;"><i
+                        class=""></i>Acciones</h5>
+                    <hr style="margin:0; margin-bottom: 5px; margin-top: 5px;" />
+                    <button style="text-align: center;" class="btn btn-outline-dark btn-sm" (click)="showAlta()"
+                      data-toggle="tooltip-detail" data-placement="bottom" title="Crear!">Crear Empleado <i
+                        class="bi bi-person-plus-fill"></i><span><strong></strong></span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row row-height">
+            <div class="col-md-12">
+              <div class="card-group">
+                <div class="card">
+                  <div class="card-body">
+
+                    <div class="row row-height">
+                      <div class="col-md-12">
+                        <div class="row row-height">
+
+                          <div class="col-md-4" *ngFor="let lista of empleadoResponse">
+                            <div class="card-group">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-subtitle mb-2" style="font-size: 15px; color: #F6A433;"><i
+                                      class=""></i>Empleado</h5>
+                                  <hr style="margin:0;" />
+                                  <p style="margin:0;"><small style="font-weight: bold;">Nombre completo:
+                                    </small><small>{{lista.ENombre}}</small></p>
+                                  <p style="margin:0;"><small style="font-weight: bold;">Puesto de trabajo:
+                                    </small><small>{{lista.EPuesto}}</small></p>
+                                  <p style="margin:0;"><small style="font-weight: bold;">Salario: $
+                                    </small><small>{{lista.ESalario}}</small></p>
+                                  <p style="margin:0;" *ngIf="lista.EEstatus === 1"><small
+                                      style="font-weight: bold;">Estado: </small><small><span
+                                        class="active-state">Activo</span></small></p>
+                                  <p style="margin:0;" *ngIf="lista.EEstatus === 2"><small
+                                      style="font-weight: bold;">Estado: </small><small><span
+                                        class="inactive-state">Inactivo</span></small></p>
+                                  <hr style="margin:0; margin-bottom: 5px; margin-top: 5px;" />
+                                  <p style="margin:0;"><small style="font-weight: bold;"></small><small>
+                                      <button *ngIf="lista.EEstatus == 1" class="btn btn-outline-primary btn-sm"
+                                        (click)="showVerDetalle(lista.EId)" data-toggle="tooltip-detail"
+                                        data-placement="bottom" title="Detalle!"><i
+                                          class="bi bi-person-fill-exclamation"></i><span><strong></strong></span></button>
+
+                                      <button *ngIf="lista.EEstatus == 1" class="btn btn-outline-warning btn-sm"
+                                        (click)="showEditar(lista.EId)" data-toggle="tooltip-detail"
+                                        data-placement="bottom" title="Editar!"><i
+                                          class="bi bi-pencil-square"></i><span><strong></strong></span></button>
+
+                                      <button *ngIf="lista.EEstatus == 1" class="btn btn-outline-danger btn-sm"
+                                        (click)="showInactivar(lista.EId)" data-toggle="tooltip-detail"
+                                        data-placement="bottom" title="Inactivar!"><i
+                                          class="bi bi-person-x-fill"></i><span><strong></strong></span></button>
+
+                                      <button *ngIf="lista.EEstatus == 2" class="btn btn-outline-success btn-sm"
+                                        (click)="showActivar(lista.EId)" data-toggle="tooltip-detail"
+                                        data-placement="bottom" title="Reactivar!"><i
+                                          class="bi bi-person-check-fill"></i><span><strong></strong></span></button>
+                                    </small></p>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

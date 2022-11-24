@@ -1,0 +1,222 @@
+<form (ngSubmit)="showEditar()" autocomplete="off" [formGroup]="empleadorFG" class="contenido-form">
+    <div class="row row-height">
+        <div class="col-md-12">
+            <div class="card-group">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="row row-height">
+                            <div class="col-md-12">
+                                <div class="card-group">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h3 class="card-subtitle mb-2"
+                                                style="font-size: 20px; color: #F6A433; text-align: center;"><i
+                                                    class=""></i>Editar<br />-- Empleado --</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row row-height">
+                            <div class="col-md-12">
+                                <div class="card-group">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h3 class="card-subtitle mb-2"
+                                                style="font-size: 15px; color: #F6A433; text-align: left;"><i
+                                                    class=""></i>Datos del Empleado</h3>
+
+                                            <hr style="margin:0;" />
+
+                                            <div class="row row-height">
+                                                <div class="col-md-6">
+                                                    <label for="exampleFormControlInput1" class="form-label">Nombre
+                                                        completo</label>
+                                                    <input class="form-control form-control-sm" type="text"
+                                                        placeholder="Nombre completo" formControlName="nombre"
+                                                        aria-label=".form-control-sm example">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="exampleFormControlInput1" class="form-label">Puesto de
+                                                        trabajo </label>
+                                                    <input class="form-control form-control-sm" type="text"
+                                                        placeholder="Puesto de trabajo " formControlName="puesto"
+                                                        aria-label=".form-control-sm example">
+                                                </div>
+                                            </div>
+
+                                            <div class="row row-height">
+                                                <div class="col-md-6">
+                                                    <label for="exampleFormControlInput1"
+                                                        class="form-label">Salario</label>
+                                                    <input (input)="formatInput($any($event).target)"
+                                                        class="form-control form-control-sm" type="text"
+                                                        placeholder="Salario" formControlName="salario"
+                                                        aria-label=".form-control-sm example">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="exampleFormControlInput1"
+                                                        class="form-label">Foto</label>
+                                                    <input class="form-control form-control-sm" type="text"
+                                                        placeholder="Foto" formControlName="foto"
+                                                        aria-label=".form-control-sm example">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form (ngSubmit)="showAgregar()" autocomplete="off" [formGroup]="beneficiarioFG"
+                            class="contenido-form">
+                            <div class="row row-height">
+                                <div class="col-md-12">
+                                    <div class="card-group">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h3 class="card-subtitle mb-2"
+                                                    style="font-size: 15px; color: #F6A433; text-align: left;"><i
+                                                        class=""></i>Beneficiarios</h3>
+
+                                                <hr style="margin:0;" />
+
+                                                <div class="row row-height">
+                                                    <div class="col-md-6">
+                                                        <label for="exampleFormControlInput1" class="form-label">Nombre
+                                                            completo</label>
+                                                        <input class="form-control form-control-sm" type="text"
+                                                            placeholder="Nombre completo" formControlName="nombre"
+                                                            aria-label=".form-control-sm example">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="exampleFormControlInput1"
+                                                            class="form-label">Parentesco</label>
+                                                        <input class="form-control form-control-sm" type="text"
+                                                            placeholder="Parentesco" formControlName="parentesco"
+                                                            aria-label=".form-control-sm example">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row row-height">
+                                                    <div class="col-md-6">
+                                                        <label for="exampleFormControlInput1" class="form-label">Fecha
+                                                            de nacimiento</label>
+                                                        <input class="form-control form-control-sm" type="date"
+                                                            placeholder="Fecha de nacimiento"
+                                                            formControlName="fechaNacimiento"
+                                                            aria-label=".form-control-sm example">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="exampleFormControlInput1"
+                                                            class="form-label">Sexo</label>
+
+                                                        <select class="form-control" id="sexo" formControlName="sexo"
+                                                            required>
+                                                            <option *ngFor="let listTipoSexo of tipoSexo"
+                                                                [value]="listTipoSexo.sexo">
+                                                                {{listTipoSexo.descripcion}}
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <hr style="margin:0; margin-bottom: 5px; margin-top: 5px;" />
+
+                                                <button [disabled]="(beneficiarioFG.invalid)? true:false"
+                                                    style="text-align: center;" class="btn btn-outline-dark btn-sm"
+                                                    type="submit" data-toggle="tooltip-detail" data-placement="bottom"
+                                                    title="Crear!">Agregar <i
+                                                        class="bi bi-people-fill"></i><span><strong></strong></span></button>
+
+                                                <hr style="margin:0; margin-bottom: 5px; margin-top: 5px;" />
+
+                                                <div class="row row-height">
+                                                    <div class="col-md-12">
+                                                        <div class="row row-height">
+                                                            <div class="col-md-4"
+                                                                *ngFor="let lista of beneficiario; let i=index;">
+                                                                <div class="card-group">
+                                                                    <div class="card">
+                                                                        <div class="card-body">
+                                                                            <h5 class="card-subtitle mb-2"
+                                                                                style="font-size: 15px; color: #F6A433;">
+                                                                                <i class=""></i>Beneficiario
+                                                                            </h5>
+                                                                            <hr style="margin:0;" />
+                                                                            <p style="margin:0;"><small
+                                                                                    style="font-weight: bold;">Nombre
+                                                                                    completo:
+                                                                                </small><small>{{lista.nombre}}</small>
+                                                                            </p>
+                                                                            <p style="margin:0;"><small
+                                                                                    style="font-weight: bold;">Parentesco:
+                                                                                </small><small>{{lista.parentesco}}</small>
+                                                                            </p>
+                                                                            <p style="margin:0;"><small
+                                                                                    style="font-weight: bold;">Fecha de
+                                                                                    nacimiento:
+                                                                                </small><small>{{lista.fechaNacimiento}}</small>
+                                                                            </p>
+                                                                            <p style="margin:0;"><small
+                                                                                    style="font-weight: bold;">Sexo:
+                                                                                </small><small>{{lista.sexo}}</small>
+                                                                            </p>
+                                                                            <hr
+                                                                                style="margin:0; margin-bottom: 5px; margin-top: 5px;" />
+                                                                            <p style="margin:0;"><small
+                                                                                    style="font-weight: bold;"></small><small>
+                                                                                    <button (click)="showEliminar(i)"
+                                                                                        class="btn btn-danger btn-sm"
+                                                                                        data-toggle="tooltip-detail"
+                                                                                        data-placement="bottom"
+                                                                                        title="Eliminar!"><i
+                                                                                            class="bi bi-person-slash"></i><span><strong></strong></span></button>
+                                                                                </small></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="row row-height">
+                            <div class="col-md-12">
+                                <div class="card-group">
+                                    <div class="card">
+                                        <div class="card-body" style="text-align: center;">
+
+                                            <button style="text-align: center;" class="btn btn-outline-dark btn-sm"
+                                                (click)="showCancelar()" data-toggle="tooltip-detail"
+                                                data-placement="bottom" title="Cancelar!">Cancelar <i
+                                                    class="bi bi-box-arrow-left"></i><span><strong></strong></span></button>
+
+                                            <button [disabled]="(empleadorFG.invalid)? true:false"
+                                                style="text-align: center;" class="btn btn-outline-dark btn-sm"
+                                                type="submit" data-toggle="tooltip-detail" data-placement="bottom"
+                                                title="Crear!">Actualizar <i
+                                                    class="bi bi-person-plus-fill"></i><span><strong></strong></span></button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

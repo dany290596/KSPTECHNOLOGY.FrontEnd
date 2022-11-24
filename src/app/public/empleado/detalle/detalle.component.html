@@ -1,0 +1,121 @@
+<div class="row row-height">
+    <div class="col-md-12">
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="row row-height">
+                        <div class="col-md-12">
+                            <div class="card-group">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-subtitle mb-2"
+                                            style="font-size: 20px; color: #F6A433; text-align: center;"><i
+                                                class=""></i>Detalle<br />-- Empleado --</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row row-height">
+                        <div class="col-md-12">
+                            <div class="card-group">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <h5 class="card-subtitle mb-2" style="font-size: 15px; color: #F6A433;"><i
+                                                class=""></i>Empleado</h5>
+                                        <hr style="margin:0;" />
+                                        <p style="margin:0;"><small style="font-weight: bold;">Nombre completo:
+                                            </small><small>{{nombre}}</small></p>
+                                        <p style="margin:0;"><small style="font-weight: bold;">Puesto de trabajo:
+                                            </small><small>{{puesto}}</small></p>
+                                        <p style="margin:0;"><small style="font-weight: bold;">Salario: $
+                                            </small><small>{{salario}}</small></p>
+                                        <p style="margin:0;" *ngIf="estatus === 1"><small
+                                                style="font-weight: bold;">Estado: </small><small><span
+                                                    class="active-state">Activo</span></small></p>
+                                        <p style="margin:0;" *ngIf="estatus === 2"><small
+                                                style="font-weight: bold;">Estado: </small><small><span
+                                                    class="inactive-state">Inactivo</span></small></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row row-height">
+                        <div class="col-md-12">
+                            <div class="card-group">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="row row-height">
+                                            <div class="col-md-12">
+                                                <div class="row row-height">
+
+                                                    <div class="col-md-4" *ngFor="let lista of beneficiario">
+                                                        <div class="card-group">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <h5 class="card-subtitle mb-2"
+                                                                        style="font-size: 15px; color: #F6A433;"><i
+                                                                            class=""></i>Beneficiario</h5>
+                                                                    <hr style="margin:0;" />
+                                                                    <p style="margin:0;"><small
+                                                                            style="font-weight: bold;">Nombre completo:
+                                                                        </small><small>{{lista.nombre}}</small></p>
+                                                                    <p style="margin:0;"><small
+                                                                            style="font-weight: bold;">Parentesco
+                                                                        </small><small>{{lista.parentesco}}</small></p>
+                                                                    <p style="margin:0;"><small
+                                                                            style="font-weight: bold;">Fecha de
+                                                                            nacimiento:
+                                                                        </small><small>{{lista.fechaNacimiento}}</small>
+                                                                    </p>
+                                                                    <p style="margin:0;">
+                                                                        <small style="font-weight: bold;">Sexo:
+                                                                        </small><small><span
+                                                                                class="active-state">{{lista.sexo}}</span></small>
+                                                                    </p>
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row row-height">
+                        <div class="col-md-12">
+                            <div class="card-group">
+                                <div class="card">
+                                    <div class="card-body" style="text-align: center;">
+
+                                        <button style="text-align: center;" class="btn btn-outline-dark btn-sm"
+                                            (click)="showRegresar()" data-toggle="tooltip-detail"
+                                            data-placement="bottom" title="Regresar!">Regresar <i
+                                                class="bi bi-box-arrow-left"></i><span><strong></strong></span></button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
